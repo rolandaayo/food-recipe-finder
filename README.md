@@ -1,9 +1,9 @@
 <div align="center">
-  <h2 align="center">Ecommerce Store</h2>
+  <h2 align="center">Food Recipe Finder</h2>
 
-  This is a fully responsive and functional ecommerce website, Responsive for all devices. <br/> Built using Next.js and TailwindCSS.
+  This is a fully responsive and functional food recipe finder web app, where you can search and save various types of food recipe. Responsive for all devices. <br/> Built using Next.js and TailwindCSS.
 
-  <a href="https://ecommerce-w3b.vercel.app/"><strong>➥ Live Demo</strong></a>
+  <a href="https://food-recipe-finder-w3b.vercel.app/"><strong>➥ Live Demo</strong></a>
 
 </div>
 
@@ -19,20 +19,20 @@ Before you begin, ensure you have met the following requirements:
 
 * [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
 
-### Installing Ecomerce
+### Installing Food Recipe Finder
 
-To install **E-commerce Store**, run this command on your git bash:
+To install **Recipe Finder**, run this command on your git bash:
 
 Linux and macOS:
 
 ```bash
-sudo git clone https://github.com/rolandaayo/ecommerce-store.git
+sudo git clone https://github.com/rolandaayo/recipe-finder.git
 ```
 
 Windows:
 
 ```bash
-git clone https://github.com/rolandaayo/ecommerce-store.git
+git clone https://github.com/rolandaayo/recipe-finder.git
 ```
 
 ## 💬 Contact
