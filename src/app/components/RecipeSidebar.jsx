@@ -1,45 +1,62 @@
-'use client'
+"use client";
 
-import React from 'react'
+import React from "react";
 
 export default function RecipeSidebar({ filters, setFilters }) {
   const dietTypes = [
-    'balanced', 'high-fiber', 'high-protein', 'low-carb',
-    'low-fat', 'low-sodium'
-  ]
+    "balanced",
+    "high-fiber",
+    "high-protein",
+    "low-carb",
+    "low-fat",
+    "low-sodium",
+  ];
 
-  const mealTypes = [
-    'breakfast', 'lunch', 'dinner', 'snack'
-  ]
+  const mealTypes = ["breakfast", "lunch", "dinner", "snack"];
 
   const cuisineTypes = [
-    'American', 'Asian', 'British', 'Caribbean', 'Central Europe',
-    'Chinese', 'Eastern Europe', 'French', 'Indian', 'Italian',
-    'Japanese', 'Mediterranean', 'Mexican', 'Middle Eastern',
-    'Nordic', 'South American', 'South East Asian'
-  ]
+    "American",
+    "Asian",
+    "British",
+    "Caribbean",
+    "Central Europe",
+    "Chinese",
+    "Eastern Europe",
+    "French",
+    "Indian",
+    "Italian",
+    "Japanese",
+    "Mediterranean",
+    "Mexican",
+    "Middle Eastern",
+    "Nordic",
+    "South American",
+    "South East Asian",
+  ];
 
   const handleCaloriesChange = (e) => {
-    const value = e.target.value
-    setFilters(prev => ({
+    const value = e.target.value;
+    setFilters((prev) => ({
       ...prev,
-      calories: value
-    }))
-  }
+      calories: value,
+    }));
+  };
 
   const handleCheckboxChange = (type, value) => {
-    setFilters(prev => ({
+    setFilters((prev) => ({
       ...prev,
       [type]: {
         ...prev[type],
-        [value]: !prev[type]?.[value]
-      }
-    }))
-  }
+        [value]: !prev[type]?.[value],
+      },
+    }));
+  };
 
   return (
     <div className="w-64 bg-white shadow-lg p-6 h-screen overflow-y-auto fixed">
-      <h2 className="text-xl font-semibold text-gray-900 mb-6">Filter Recipes</h2>
+      <h2 className="text-xl font-semibold text-gray-900 mb-6">
+        Filter Recipes
+      </h2>
 
       {/* Calories Range */}
       <div className="mb-6">
@@ -62,16 +79,16 @@ export default function RecipeSidebar({ filters, setFilters }) {
       <div className="mb-6">
         <h3 className="text-sm font-medium text-gray-900 mb-2">Diet</h3>
         <div className="space-y-2">
-          {dietTypes.map(diet => (
+          {dietTypes.map((diet) => (
             <label key={diet} className="flex items-center">
               <input
                 type="checkbox"
                 checked={filters.diet?.[diet] || false}
-                onChange={() => handleCheckboxChange('diet', diet)}
+                onChange={() => handleCheckboxChange("diet", diet)}
                 className="rounded border-gray-300 text-orange-600 focus:ring-orange-500"
               />
               <span className="ml-2 text-sm text-gray-600 capitalize">
-                {diet.split('-').join(' ')}
+                {diet.split("-").join(" ")}
               </span>
             </label>
           ))}
@@ -82,12 +99,12 @@ export default function RecipeSidebar({ filters, setFilters }) {
       <div className="mb-6">
         <h3 className="text-sm font-medium text-gray-900 mb-2">Meal Type</h3>
         <div className="space-y-2">
-          {mealTypes.map(meal => (
+          {mealTypes.map((meal) => (
             <label key={meal} className="flex items-center">
               <input
                 type="checkbox"
                 checked={filters.mealType?.[meal] || false}
-                onChange={() => handleCheckboxChange('mealType', meal)}
+                onChange={() => handleCheckboxChange("mealType", meal)}
                 className="rounded border-gray-300 text-orange-600 focus:ring-orange-500"
               />
               <span className="ml-2 text-sm text-gray-600 capitalize">
@@ -102,17 +119,15 @@ export default function RecipeSidebar({ filters, setFilters }) {
       <div className="mb-6">
         <h3 className="text-sm font-medium text-gray-900 mb-2">Cuisine</h3>
         <div className="space-y-2 max-h-48 overflow-y-auto">
-          {cuisineTypes.map(cuisine => (
+          {cuisineTypes.map((cuisine) => (
             <label key={cuisine} className="flex items-center">
               <input
                 type="checkbox"
                 checked={filters.cuisine?.[cuisine] || false}
-                onChange={() => handleCheckboxChange('cuisine', cuisine)}
+                onChange={() => handleCheckboxChange("cuisine", cuisine)}
                 className="rounded border-gray-300 text-orange-600 focus:ring-orange-500"
               />
-              <span className="ml-2 text-sm text-gray-600">
-                {cuisine}
-              </span>
+              <span className="ml-2 text-sm text-gray-600">{cuisine}</span>
             </label>
           ))}
         </div>
@@ -126,5 +141,5 @@ export default function RecipeSidebar({ filters, setFilters }) {
         Clear All Filters
       </button>
     </div>
-  )
+  );
 }
